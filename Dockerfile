@@ -26,9 +26,12 @@ RUN  echo "deb http://ppa.launchpad.net/certbot/certbot/ubuntu xenial main" > /e
 COPY composer.* /workdir/
 RUN composer -o install
 
+RUN ls
 # App and crontab
 COPY . /workdir/
 RUN ln -s /workdir/crontab /var/spool/cron/crontabs/root
+
+RUN ls
 
 # Expose HTTP/HTTPS ports for certbot standalone
 EXPOSE 80 443
