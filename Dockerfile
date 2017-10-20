@@ -1,6 +1,8 @@
 FROM phpdockerio/php71-cli
 MAINTAINER http://phpdocker.io
 
+RUN mkdir -p /workdir
+
 WORKDIR /workdir
 
 # The following environment variables are for you to set when you run the container
